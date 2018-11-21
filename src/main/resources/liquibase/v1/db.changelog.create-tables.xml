@@ -10,6 +10,7 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <changeSet author="Dmytro_Halomko" id="1-1">
+        <!-- create table: Competition -->
         <createTable tableName="competition">
             <column autoIncrement="true" name="id" type="BIGSERIAL">
                 <constraints primaryKey="true" primaryKeyName="id"/>
@@ -30,5 +31,65 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
+
+        <!-- create table: Application -->
+        <createTable tableName="application">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="id"/>
+            </column>
+            <column name="full_name" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="gender" type="VARCHAR">
+            </column>
+            <column name="legal_tutor" type="VARCHAR(100)">
+            </column>
+            <column name="email" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="age" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="birth_date" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="music_school" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="professor_list" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="professor_email" type="VARCHAR(100)">
+            </column>
+            <column name="website" type="VARCHAR(255)">
+            </column>
+            <column name="ensembles" type="TEXT">
+            </column>
+            <!-- constraints -->
+            <column name="category_id" type="BIGSERIAL">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <!-- create enum type for age categories -->
+        <sql>CREATE TYPE categories AS ENUM ('YOUNG ARTIST','VIRTUOSO', 'PROFESSIONAL')</sql>
+        <!-- create table: Category -->
+        <createTable tableName="category">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="id"/>
+            </column>
+            <column name="age_category" type="categories">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <!-- set constraints: application (n)<-(1) category -->
+        <addForeignKeyConstraint baseTableName="category"
+                                 baseColumnNames="age_category"
+                                 constraintName="application_category_fkey"
+                                 referencedTableName="application"
+                                 referencedColumnNames="category_id"
+                                 onDelete="CASCADE"
+                                 onUpdate="CASCADE"/>
     </changeSet>
 </databaseChangeLog>
