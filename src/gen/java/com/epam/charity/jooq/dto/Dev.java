@@ -4,9 +4,20 @@
 package com.epam.charity.jooq.dto;
 
 
+import com.epam.charity.jooq.dto.tables.Address;
+import com.epam.charity.jooq.dto.tables.Application;
+import com.epam.charity.jooq.dto.tables.ApplicationJudge;
+import com.epam.charity.jooq.dto.tables.Category;
 import com.epam.charity.jooq.dto.tables.Competition;
+import com.epam.charity.jooq.dto.tables.CompetitionApplication;
+import com.epam.charity.jooq.dto.tables.CompetitionDiscipline;
+import com.epam.charity.jooq.dto.tables.CompetitionJudge;
+import com.epam.charity.jooq.dto.tables.CompetitonCategory;
 import com.epam.charity.jooq.dto.tables.Databasechangelog;
 import com.epam.charity.jooq.dto.tables.Databasechangeloglock;
+import com.epam.charity.jooq.dto.tables.Judge;
+import com.epam.charity.jooq.dto.tables.MusicDiscipline;
+import com.epam.charity.jooq.dto.tables.Video;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -32,7 +43,7 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Dev extends SchemaImpl {
 
-    private static final long serialVersionUID = -1014439443;
+    private static final long serialVersionUID = -607135655;
 
     /**
      * The reference instance of <code>dev</code>
@@ -40,9 +51,49 @@ public class Dev extends SchemaImpl {
     public static final Dev DEV = new Dev();
 
     /**
+     * The table <code>dev.address</code>.
+     */
+    public final Address ADDRESS = com.epam.charity.jooq.dto.tables.Address.ADDRESS;
+
+    /**
+     * The table <code>dev.application</code>.
+     */
+    public final Application APPLICATION = com.epam.charity.jooq.dto.tables.Application.APPLICATION;
+
+    /**
+     * The table <code>dev.application_judge</code>.
+     */
+    public final ApplicationJudge APPLICATION_JUDGE = com.epam.charity.jooq.dto.tables.ApplicationJudge.APPLICATION_JUDGE;
+
+    /**
+     * The table <code>dev.category</code>.
+     */
+    public final Category CATEGORY = com.epam.charity.jooq.dto.tables.Category.CATEGORY;
+
+    /**
      * The table <code>dev.competition</code>.
      */
     public final Competition COMPETITION = com.epam.charity.jooq.dto.tables.Competition.COMPETITION;
+
+    /**
+     * The table <code>dev.competition_application</code>.
+     */
+    public final CompetitionApplication COMPETITION_APPLICATION = com.epam.charity.jooq.dto.tables.CompetitionApplication.COMPETITION_APPLICATION;
+
+    /**
+     * The table <code>dev.competition_discipline</code>.
+     */
+    public final CompetitionDiscipline COMPETITION_DISCIPLINE = com.epam.charity.jooq.dto.tables.CompetitionDiscipline.COMPETITION_DISCIPLINE;
+
+    /**
+     * The table <code>dev.competition_judge</code>.
+     */
+    public final CompetitionJudge COMPETITION_JUDGE = com.epam.charity.jooq.dto.tables.CompetitionJudge.COMPETITION_JUDGE;
+
+    /**
+     * The table <code>dev.competiton_category</code>.
+     */
+    public final CompetitonCategory COMPETITON_CATEGORY = com.epam.charity.jooq.dto.tables.CompetitonCategory.COMPETITON_CATEGORY;
 
     /**
      * The table <code>dev.databasechangelog</code>.
@@ -53,6 +104,21 @@ public class Dev extends SchemaImpl {
      * The table <code>dev.databasechangeloglock</code>.
      */
     public final Databasechangeloglock DATABASECHANGELOGLOCK = com.epam.charity.jooq.dto.tables.Databasechangeloglock.DATABASECHANGELOGLOCK;
+
+    /**
+     * The table <code>dev.JudgeDao</code>.
+     */
+    public final Judge JUDGE = com.epam.charity.jooq.dto.tables.Judge.JUDGE;
+
+    /**
+     * The table <code>dev.music_discipline</code>.
+     */
+    public final MusicDiscipline MUSIC_DISCIPLINE = com.epam.charity.jooq.dto.tables.MusicDiscipline.MUSIC_DISCIPLINE;
+
+    /**
+     * The table <code>dev.video</code>.
+     */
+    public final Video VIDEO = com.epam.charity.jooq.dto.tables.Video.VIDEO;
 
     /**
      * No further instances allowed
@@ -79,8 +145,19 @@ public class Dev extends SchemaImpl {
 
     private final List<Table<?>> getTables0() {
         return Arrays.<Table<?>>asList(
+            Address.ADDRESS,
+            Application.APPLICATION,
+            ApplicationJudge.APPLICATION_JUDGE,
+            Category.CATEGORY,
             Competition.COMPETITION,
+            CompetitionApplication.COMPETITION_APPLICATION,
+            CompetitionDiscipline.COMPETITION_DISCIPLINE,
+            CompetitionJudge.COMPETITION_JUDGE,
+            CompetitonCategory.COMPETITON_CATEGORY,
             Databasechangelog.DATABASECHANGELOG,
-            Databasechangeloglock.DATABASECHANGELOGLOCK);
+            Databasechangeloglock.DATABASECHANGELOGLOCK,
+            Judge.JUDGE,
+            MusicDiscipline.MUSIC_DISCIPLINE,
+            Video.VIDEO);
     }
 }

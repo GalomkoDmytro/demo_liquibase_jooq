@@ -4,9 +4,20 @@
 package com.epam.charity.jooq.dto;
 
 
+import com.epam.charity.jooq.dto.tables.Address;
+import com.epam.charity.jooq.dto.tables.Application;
+import com.epam.charity.jooq.dto.tables.ApplicationJudge;
+import com.epam.charity.jooq.dto.tables.Category;
 import com.epam.charity.jooq.dto.tables.Competition;
+import com.epam.charity.jooq.dto.tables.CompetitionApplication;
+import com.epam.charity.jooq.dto.tables.CompetitionDiscipline;
+import com.epam.charity.jooq.dto.tables.CompetitionJudge;
+import com.epam.charity.jooq.dto.tables.CompetitonCategory;
 import com.epam.charity.jooq.dto.tables.Databasechangelog;
 import com.epam.charity.jooq.dto.tables.Databasechangeloglock;
+import com.epam.charity.jooq.dto.tables.Judge;
+import com.epam.charity.jooq.dto.tables.MusicDiscipline;
+import com.epam.charity.jooq.dto.tables.Video;
 
 import javax.annotation.Generated;
 
@@ -25,9 +36,49 @@ import javax.annotation.Generated;
 public class Tables {
 
     /**
+     * The table <code>dev.address</code>.
+     */
+    public static final Address ADDRESS = com.epam.charity.jooq.dto.tables.Address.ADDRESS;
+
+    /**
+     * The table <code>dev.application</code>.
+     */
+    public static final Application APPLICATION = com.epam.charity.jooq.dto.tables.Application.APPLICATION;
+
+    /**
+     * The table <code>dev.application_judge</code>.
+     */
+    public static final ApplicationJudge APPLICATION_JUDGE = com.epam.charity.jooq.dto.tables.ApplicationJudge.APPLICATION_JUDGE;
+
+    /**
+     * The table <code>dev.category</code>.
+     */
+    public static final Category CATEGORY = com.epam.charity.jooq.dto.tables.Category.CATEGORY;
+
+    /**
      * The table <code>dev.competition</code>.
      */
     public static final Competition COMPETITION = com.epam.charity.jooq.dto.tables.Competition.COMPETITION;
+
+    /**
+     * The table <code>dev.competition_application</code>.
+     */
+    public static final CompetitionApplication COMPETITION_APPLICATION = com.epam.charity.jooq.dto.tables.CompetitionApplication.COMPETITION_APPLICATION;
+
+    /**
+     * The table <code>dev.competition_discipline</code>.
+     */
+    public static final CompetitionDiscipline COMPETITION_DISCIPLINE = com.epam.charity.jooq.dto.tables.CompetitionDiscipline.COMPETITION_DISCIPLINE;
+
+    /**
+     * The table <code>dev.competition_judge</code>.
+     */
+    public static final CompetitionJudge COMPETITION_JUDGE = com.epam.charity.jooq.dto.tables.CompetitionJudge.COMPETITION_JUDGE;
+
+    /**
+     * The table <code>dev.competiton_category</code>.
+     */
+    public static final CompetitonCategory COMPETITON_CATEGORY = com.epam.charity.jooq.dto.tables.CompetitonCategory.COMPETITON_CATEGORY;
 
     /**
      * The table <code>dev.databasechangelog</code>.
@@ -38,4 +89,19 @@ public class Tables {
      * The table <code>dev.databasechangeloglock</code>.
      */
     public static final Databasechangeloglock DATABASECHANGELOGLOCK = com.epam.charity.jooq.dto.tables.Databasechangeloglock.DATABASECHANGELOGLOCK;
+
+    /**
+     * The table <code>dev.JudgeDao</code>.
+     */
+    public static final Judge JUDGE = com.epam.charity.jooq.dto.tables.Judge.JUDGE;
+
+    /**
+     * The table <code>dev.music_discipline</code>.
+     */
+    public static final MusicDiscipline MUSIC_DISCIPLINE = com.epam.charity.jooq.dto.tables.MusicDiscipline.MUSIC_DISCIPLINE;
+
+    /**
+     * The table <code>dev.video</code>.
+     */
+    public static final Video VIDEO = com.epam.charity.jooq.dto.tables.Video.VIDEO;
 }

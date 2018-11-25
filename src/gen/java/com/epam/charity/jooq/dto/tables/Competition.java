@@ -36,7 +36,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Competition extends TableImpl<CompetitionRecord> {
 
-    private static final long serialVersionUID = 448388029;
+    private static final long serialVersionUID = -1435447719;
 
     /**
      * The reference instance of <code>dev.competition</code>
@@ -54,7 +54,7 @@ public class Competition extends TableImpl<CompetitionRecord> {
     /**
      * The column <code>dev.competition.id</code>.
      */
-    public final TableField<CompetitionRecord, Long> ID = createField("id", org.jooq.impl.SQLDataType.BIGINT.nullable(false).defaultValue(org.jooq.impl.DSL.field("nextval('dev.competition_id_seq'::regclass)", org.jooq.impl.SQLDataType.BIGINT)), this, "");
+    public final TableField<CompetitionRecord, Integer> ID = createField("id", org.jooq.impl.SQLDataType.INTEGER.nullable(false).defaultValue(org.jooq.impl.DSL.field("nextval('dev.competition_id_seq'::regclass)", org.jooq.impl.SQLDataType.INTEGER)), this, "");
 
     /**
      * The column <code>dev.competition.title</code>.
@@ -69,7 +69,7 @@ public class Competition extends TableImpl<CompetitionRecord> {
     /**
      * The column <code>dev.competition.is_active</code>.
      */
-    public final TableField<CompetitionRecord, Boolean> IS_ACTIVE = createField("is_active", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false), this, "");
+    public final TableField<CompetitionRecord, Short> IS_ACTIVE = createField("is_active", org.jooq.impl.SQLDataType.SMALLINT.nullable(false), this, "");
 
     /**
      * The column <code>dev.competition.start_date</code>.
@@ -115,7 +115,7 @@ public class Competition extends TableImpl<CompetitionRecord> {
      * {@inheritDoc}
      */
     @Override
-    public Identity<CompetitionRecord, Long> getIdentity() {
+    public Identity<CompetitionRecord, Integer> getIdentity() {
         return Keys.IDENTITY_COMPETITION;
     }
 
@@ -124,7 +124,7 @@ public class Competition extends TableImpl<CompetitionRecord> {
      */
     @Override
     public UniqueKey<CompetitionRecord> getPrimaryKey() {
-        return Keys.ID;
+        return Keys.PRIMARY18;
     }
 
     /**
@@ -132,7 +132,7 @@ public class Competition extends TableImpl<CompetitionRecord> {
      */
     @Override
     public List<UniqueKey<CompetitionRecord>> getKeys() {
-        return Arrays.<UniqueKey<CompetitionRecord>>asList(Keys.ID);
+        return Arrays.<UniqueKey<CompetitionRecord>>asList(Keys.PRIMARY18);
     }
 
     /**
